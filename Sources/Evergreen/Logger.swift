@@ -393,7 +393,7 @@ public final class Logger {
     // MARK: Logger Hierarchy
 
     /// The root of the logger hierarchy
-    @available(*, deprecated: 0.10, message: "Use the global `Evergreen.defaultLogger` instead.") public class func defaultLogger() -> Logger {
+    @available(swift, deprecated: 0.10, renamed: "Evergreen.defaultLogger") public class func defaultLogger() -> Logger {
         return Evergreen.defaultLogger
     }
 
@@ -402,7 +402,7 @@ public final class Logger {
 
      Generally, the logger's key will be the file name and it will be a direct child of the default logger.
      */
-    @available(*, deprecated: 0.10, message: "Use the global `Evergreen.getLogger(forFile:)` function instead.") public class func loggerForFile(_ file: String = #file) -> Logger {
+    @available(swift, deprecated: 0.10, renamed: "Evergreen.getLogger(forFile:)") public class func loggerForFile(_ file: String = #file) -> Logger {
         return Evergreen.getLogger(forFile: file)
     }
 
@@ -413,7 +413,7 @@ public final class Logger {
 
      A parent-child relationship is established and can be used to set specific settings such as log levels and handlers for only parts of the logger hierarchy.
      */
-    @available(*, deprecated: 0.10, message: "Use the global `Evergreen.getLogger()` function instead.") public class func loggerForKeyPath(_ keyPath: Logger.KeyPath) -> Logger {
+    @available(swift, deprecated: 0.10, renamed: "Evergreen.getLogger()") public class func loggerForKeyPath(_ keyPath: Logger.KeyPath) -> Logger {
         return Evergreen.getLogger(keyPath)
     }
 

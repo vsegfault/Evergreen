@@ -81,15 +81,9 @@ open class Formatter {
         }
 
         if let error = event.error {
-            let errorMessage: String
-            switch error {
-            case let error as CustomDebugStringConvertible:
-                errorMessage = error.debugDescription
-            case let error as CustomStringConvertible:
-                errorMessage = error.description
-            default:
-                errorMessage = String(describing: error)
-            }
+
+            let errorMessage: String = error.localizedDescription
+
             string += " [ERROR: \(errorMessage)]"
         }
 
